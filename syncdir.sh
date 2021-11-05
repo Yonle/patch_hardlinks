@@ -9,7 +9,7 @@ symlinkall() {
 			symlinkall "$1/$i" "$2/$i" "$i" "$4 "
 		else
 			echo "$4 + Symlinking $2/$i"
-			ln -s "$2/$i" "$1/$i"
+			! [ -h "$1/$i" ] && ln -s "$2/$i" "$1/$i"
 		fi
 	done
 }
