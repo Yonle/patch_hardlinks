@@ -5,8 +5,10 @@ symlinkall() {
 		curdir="$i"
 		if [ -d "$2/$i" ]; then
 			! [ -d "$1/$curdir" ] && mkdir -p $1/$curdir
-			symlinkall "$1/$i" "$2/$i" "$i"
+			echo "$4 - Entering directory: $2/$i"
+			symlinkall "$1/$i" "$2/$i" "$i" "$4 "
 		else
+			echo "$4 + Symlinking $2/$i"
 			ln -s "$2/$i" "$1/$i"
 		fi
 	done
