@@ -5,9 +5,9 @@ How it writes & how the code looks is a bit stupid, But as long it inject the so
 
 How to use
 ==========
-Let's say you want to compile cli-visualizer, Then you nay execute this inside the directory:
+Let's say you want to compile mailutils, Then you may execute this inside the directory:
 
- ~/cli-visualizer $ patch_hardlinks .
+ ~/mailutils $ patch_hardlinks .
 
 Yes, put the dot at the end.
 
