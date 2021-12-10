@@ -1,31 +1,12 @@
+patch_hardlinks, Yes you know what is this.
+A simple shell program written in dash just for fixing all of hardcoded path, So you can compile a package in termux perfectly.
 
-Usage: syncdir SRC <target>
+How it writes & how the code looks is a bit stupid, But as long it inject the source code, Then it works.
 
-syncdir is only a small tool that used to sync
-a file from restricted path to unrestricted path. 
+How to use
+==========
+Let's say you want to compile cli-visualizer, Then you nay execute this inside the directory:
 
-This is good for a code that stored in vFat partition
-that does not has a support for storing executeable
-file or binaries, Especially for those ones who stuck
-compiling binaries.
+ ~/cli-visualizer $ patch_hardlinks .
 
-SRC    - Original source directory from restricted path
-target - Target path for the good/unrestricted side.
-
-If there's no <target> provided, The current directory will
-used to get synced directory. You may need to re-sync it if
-there's a new file from original source.
-
-Do not use the synced directory for git. That would lead you
-to a very big issue. Copy every files from original source
-if you're done.
-
-Example of usage:
-  syncdir /media/usb/my-project
-
-Known issues
-============
- - A file/directory that contain space is not synced very well, Instead, it's all splitted.
-
-* syncdir by @Yonle
-* https://github.com/Yonle/syncdir
+Yes, put the dot at the end.
