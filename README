@@ -10,3 +10,9 @@ Let's say you want to compile cli-visualizer, Then you nay execute this inside t
  ~/cli-visualizer $ patch_hardlinks .
 
 Yes, put the dot at the end.
+
+
+Wait in a fucking second, Read this
+===================================
+This tool is not a tool that used for changing DT_RPATH in compiled binary. So do not open a issue regarding that issue.
+
