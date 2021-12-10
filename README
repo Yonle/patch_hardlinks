@@ -16,7 +16,7 @@ Wait in a fucking second, Read this
 ===================================
 First of all, This tool is not a tool that used for changing DT_RPATH in compiled binary.
 
-Second, This is not "just work" thingy like once you build after injection, It works. that's now how it works, NERDS. Some of function may not available/forbidden in Bionic Libc which require some additional patch. If you just say didn't know how & yelling for help in my email, or even a PM, Get out and fuck off.
+Second, This is not "just work" thingy like once you build after injecting, It works. that's now how it works, NERDS. Some of function may not available/forbidden in Bionic Libc which require some additional patch. If you just say didn't know how & yelling for help in my email, or even a PM, Get out and fuck off.
 
 Three, THERE'S NO FUCKING "i injected ###util but it's still not works", NO. YOU STILL NEED ADDITIONAL PATCH, IF YOU DIDN'T KNOW HOW TO DO IT, LEARN C AND DO THE 2ND STEP. 
 
