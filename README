@@ -1,29 +1,11 @@
-patch_hardlinks, Yes you know what is this.
+patch_hardlinks
+===============
 A simple shell program written in dash just for fixing all of hardcoded path, So you can compile a package in termux perfectly.
 
-How the injector code looks is a bit stupid, But as long it inject the source code, Then it works.
+Usage
+=====
+Usage: patch_hardlinks [directory] [from] [to]
 
-How to use
-==========
-Let's say you want to compile mailutils, Then you may execute this inside the directory:
-
- ~/mailutils $ patch_hardlinks .
-
-Yes, put the dot at the end.
-
-
-Wait in a fucking second, Read this
-===================================
-First of all, This tool is not a tool that used for changing DT_RPATH in compiled binary.
-
-Second, This is not "just work" thingy like once you build after injecting, It works. that's now how it works, NERDS. Some of function may not available/forbidden in Bionic Libc which require some additional patch. If you just say didn't know how & yelling for help in my email, or even a PM, Get out and fuck off.
-
-Three, THERE'S NO FUCKING "i injected ###util but it's still not works", NO. YOU STILL NEED ADDITIONAL PATCH, IF YOU DIDN'T KNOW HOW TO DO IT, LEARN C AND REREAD THE 2ND STEP. 
-
-
-Community
-=========
-As long you're fine with this, Ask here. But being noob or doing something like the 3rd step at the Important read me section, Or you can say, doing something like "help, plasma is not working after injecting", Fuck off. If you just coming to our community to being annoying or being DONKEY DICK, shut your mouth and eat your own slurs.
-
-- Telegram: t.me/yonlecoder
-- Discord: Fuck you
+Example
+=======
+$ patch_hardlinks ~/mailutils/ /tmp $PREFIX/tmp

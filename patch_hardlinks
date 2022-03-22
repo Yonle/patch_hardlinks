@@ -1,28 +1,10 @@
 #!/usr/bin/env sh
 
-TERMUX_PREFIX="\/data\/data\/com.termux\/files"
+if ! [ $# -ge 1 ]; then
+	echo "Usage: patch_hardlinks [directory] [from] [to]"
+	exit 1
+fi
 
-inject() {
-	for i in "s/\/usr/$TERMUX_PREFIX\/usr/g" "s/$TERMUX_PREFIX\/usr\/local/$TERMUX_PREFIX\/usr/g" "s/$TERMUX_PREFIX$TERMUX_PREFIX/$TERMUX_PREFIX/g"; do
-		sed -i "$i" $1
-	done
-}
-
-fix_hardcoded() {
-	for i in $(ls -A "$2"); do
-		curdir="$i"
-		if [ -d "$2/$i" ]; then
-			! [ -d "$1/$curdir" ] && mkdir -p $1/$curdir
-			echo "$4 - Entering directory: $2/$i"
-			fix_hardcoded "$1/$i" "$2/$i" "$i" "$4 "
-		else
-			echo "$4 + Injecting $2/$i"
-			! [ -h "$1/$i" ] && inject "$2/$i"
-		fi
-	done
-}
-
-export TDIR=$2
-! [ -d $TDIR ] && mkdir -p $TDIR
-cd ${TDIR:-.}
-fix_hardcoded . $1
+for i in $(grep -R -l $1); do
+	sed -i "s%$1%$2%g" $i;
+done
