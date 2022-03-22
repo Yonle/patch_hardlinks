@@ -5,6 +5,7 @@ if ! [ $# -ge 1 ]; then
 	exit 1
 fi
 
-for i in $(grep -R -l $1); do
+for i in $(grep -R -l "$1"); do
+	echo "Patching $i"
 	sed -i "s%$1%$2%g" $i;
 done
